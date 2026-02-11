@@ -15,7 +15,7 @@ function App() {
 
   return (
     <Paper sx={{ display: "flex", position: "relative", flexDirection: "row", height: "100vh", width: "100vw", backgroundColor: "rgb(15 23 42)", justifyContent: "center" }}>
-      <Box sx={{ width: "40%", display: "flex", color: "white", alignItems: "center", zIndex: 2, pointerEvents: "none" }}>
+      <Box sx={{ width: "40%", display: "flex", color: "white", alignItems: "center", zIndex: 2, pointerEvents: "none", overflow: "hidden" }}>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Typography fontSize={50}>Sneha Annamareddy</Typography>
           <Typography fontSize={25}>Full Stack Engineer</Typography>
@@ -36,7 +36,7 @@ function App() {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ width: "40%", display: "flex", flexDirection: "column", color: "white", zIndex: 2, pointerEvents: "none" }}>
+      <Box sx={{ width: "40%", display: "flex", flexDirection: "column", color: "white", zIndex: 2, pointerEvents: "none", overflow: "auto" }}>
 
         <Box sx={{ height: "10vh" }}></Box>
         <Box id="about" sx={{ display: "flex", flexDirection: "column", paddingLeft: "20px" }}>
