@@ -16,17 +16,17 @@ function Education({ from, to, icon, degree, school, body }) {
             }}
         >
             <Box sx={{ width: "25%", display: "flex", flexDirection: "column" }}>
-                <Box mt={1} sx={{ width: "100%", display: "flex", flexDirection: "row", color: enter ? "#00853E" : "white" }}>
-                    <Typography fontWeight="bold" mr={1}>{from}</Typography>
+                <Box mt={1} sx={{ width: "90%", display: "flex", flexDirection: "row",justifyContent:"space-around", color: enter ? "#00853E" : "white" }}>
+                    <Typography noWrap fontWeight="bold">{from}</Typography>
                     <HorizontalRule />
-                    <Typography fontWeight="bold" ml={1}>{to}</Typography>
+                    <Typography noWrap fontWeight="bold">{to}</Typography>
                 </Box>
                 <Box height={10}></Box>
                 <img src={icon} alt="Education Icon" width="90%" height="100%" style={{ borderRadius: "10%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ width: "75%", display: "flex", flexDirection: "column" }}>
                 <Typography component="span" fontWeight="bold" sx={{margin: 0}} fontSize={30} color={enter ? "#00853E" : "white"}>{degree}</Typography>
-                <Typography fontWeight="bold" color={enter ? "#00853E" : "white"}>{school} (Computer Science)</Typography>
+                <Typography fontWeight="bold" color={enter ? "#00853E" : "white"}>{school} (Data Science)</Typography>
                 <Box height={10}></Box>
                 <Typography fontSize={15} color="lightgray">{body}</Typography>
             </Box>

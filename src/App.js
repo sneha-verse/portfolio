@@ -53,7 +53,7 @@ function App() {
           <Typography fontWeight={100} mt={1} fontSize={20}>
             <TypeAnimation
               sequence={[
-                "🟢 Available for work, United States", 1500,
+                "🟢 Available for work, USA", 1500,
                 "Spring Boot • Microservices", 1500,
                 "AWS • Azure • Kafka", 1500,
                 "React • Full Stack", 1500,
@@ -211,8 +211,8 @@ function App() {
               viewport={{ amount: 0.6 }} // triggers when 50% visible
               transition={{ duration: 0.5, ease: "easeOut" }}>
               <Education
-                from="Mar 2024"
-                to="Jun 2025"
+                from="2024"
+                to="2025"
                 icon={untImage}
                 degree="Master of Science"
                 school="University of North Texas"
