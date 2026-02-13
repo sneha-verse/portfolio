@@ -82,7 +82,10 @@ function App() {
             Sneha Annamareddy
           </Typography>
           <Typography fontWeight={700} color="gray" fontSize={25}>
-            Full Stack Engineer
+            Full Stack Developer
+          </Typography>
+          <Typography fontWeight={700} color="gray" fontSize={25}>
+            If the numbers matter to the business, I build applications the business can trust.
           </Typography>
           <Typography fontWeight={100} mt={1} fontSize={20}>
             <TypeAnimation
@@ -167,17 +170,22 @@ function App() {
           >
             <Heading img={helloImage} text={"ABOUT ME"} />
             <Typography mt={2} fontWeight={250}>
-              I'm a frontend engineer with a specialty in web accessibility,
-              focused on building pixel-perfect, intuitive user interfaces. I
-              enjoy working at the intersection of design and engineering, where
-              great user experience meets robust, clean, and scalable code.
+              I didn’t get into Java just to write code — I was always curious about how real systems work 
+              behind the scenes and how technology supports critical business operations.
+              Early in my career, I realized that building enterprise software isn’t about frameworks — 
+              it’s about understanding real problems, handling edge cases, and making systems reliable under pressure.
             </Typography>
             <br />
             <Typography fontWeight={250}>
-              Currently, I'm a senior frontend engineer at Klaviyo, where I work
-              on the component library team to help maintain and evolve our
-              design system. In this role, I lead accessibility efforts across
-              components, tooling, and patterns.
+              As my experience grew, my role naturally moved beyond development into ownership — designing solutions, 
+              troubleshooting production issues, improving performance, and making sure business workflows run 
+              without disruption.
+            </Typography>
+             <br />
+            <Typography fontWeight={250}>
+              Today, with 7+ years of experience, I focus on building Java and Spring Boot applications that 
+              businesses can trust to run their critical operations — with an aim to improve stability, performance, 
+              and reliability with every release.
             </Typography>
             <Box
               sx={{
@@ -219,10 +227,10 @@ function App() {
               <Experience
                 from="2024"
                 to="present"
-                title="Senior Software Engineer"
-                body="Currently, I'm a senior frontend engineer at Klaviyo, where I work on the component library team to help maintain and evolve our design system. In this role, I lead accessibility efforts across components, tooling, and patterns, partnering closely with designers and engineers to ensure accessibility is part of our core architecture."
-                skills={["Java", "SpringBoot", "JavaScript", "React", "Azure"]}
-                company={"Klaviyo"}
+                title="Senior Java Full Stack Developer"
+                body="Working on a financial operations platform where accuracy of billing and reconciliation data is critical for business users. Focused on handling historical recalculations, backdated changes, and idempotent processing to keep reports consistent. Spent significant time troubleshooting data mismatches, optimizing slow queries, and stabilizing production behavior. The role has been heavily focused on correctness, performance, and operational reliability."
+                skills={["Java", "SpringBoot","PL/SQL", "React", "Material UI", "PostgreSQL","Oracle", "Kafka"]}
+                company={"Accellor"}
               />
             </motion.div>
 
@@ -233,23 +241,22 @@ function App() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Experience
-                from="2024"
-                to="2025"
-                title="Senior Software Engineer"
-                body="Currently, I'm a senior frontend engineer at Klaviyo, where I work on the component library team to help maintain and evolve our design system. In this role, I lead accessibility efforts across components, tooling, and patterns, partnering closely with designers and engineers to ensure accessibility is part of our core architecture."
+                from="2022"
+                to="2023"
+                title="Java Full Stack Developer"
+                body="Built backend services for a large-scale deployment tracking platform used by operations teams across regions. Implemented Kafka-based event flows to handle continuous status updates between systems. Addressed real-world issues like duplicate events, out-of-order processing, and data inconsistencies. This experience strengthened my approach to building reliable event-driven systems."
                 skills={[
                   "Java",
                   "SringBoot",
                   "JavaScript",
-                  "React",
-                  "Azure",
-                  "Java",
-                  "SpringBoot",
-                  "JavaScript",
-                  "React",
-                  "Azure",
+                  "Angular",
+                  "MongoDB",
+                  "Microservice Architecture",
+                  "Docker",
+                  "Jenkins",
+                  "RBAC control",
                 ]}
-                company={"Microsoft"}
+                company={"ServicePoint"}
               />
             </motion.div>
 
@@ -260,12 +267,12 @@ function App() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Experience
-                from="2024"
-                to="2025"
-                title="Senior Software Engineer"
-                body="Currently, I'm a senior frontend engineer at Klaviyo, where I work on the component library team to help maintain and evolve our design system. In this role, I lead accessibility efforts across components, tooling, and patterns, partnering closely with designers and engineers to ensure accessibility is part of our core architecture."
-                skills={["Java", "SpringBoot", "JavaScript", "React", "Azure"]}
-                company={"Microsoft"}
+                from="2020"
+                to="2022"
+                title="Senior Application Engineer"
+                body="Worked on high-traffic order processing services supporting peak retail workloads. Focused on performance tuning, Redis caching, and moving critical flows to asynchronous Kafka processing. Involved in release monitoring and production issue resolution during high-volume periods. This role shaped my understanding of designing systems for scale and stability."
+                skills={["Java", "SpringBoot", "Spring Security","Apache Kafka", "REST APIs", "Redis","MySQL", "Cassandra"]}
+                company={"PacWest Bancorp"}
               />
             </motion.div>
 
@@ -276,12 +283,12 @@ function App() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Experience
-                from="2024"
-                to="2025"
-                title="Senior Software Engineer"
-                body="Currently, I'm a senior frontend engineer at Klaviyo, where I work on the component library team to help maintain and evolve our design system. In this role, I lead accessibility efforts across components, tooling, and patterns, partnering closely with designers and engineers to ensure accessibility is part of our core architecture."
-                skills={["Java", "SpringBoot", "JavaScript", "React", "Azure"]}
-                company={"Microsoft"}
+                from="2018"
+                to="2020"
+                title="Associate Java Developer"
+                body="Developed backend services for a healthcare integration platform handling HL7/FHIR data from multiple systems. Built batch jobs for data synchronization and implemented strong validation and access controls. Supported production issues related to data quality and processing failures. This was my foundation in building reliable, data-sensitive enterprise systems."
+                skills={["Java", "SpringBoot", "Spring Batch", "JWT", "HL7 / FHIR", "MySQL", "Maven"]}
+                company={"Venturedrive"}
               />
             </motion.div>
           </Box>
