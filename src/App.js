@@ -84,9 +84,6 @@ function App() {
           <Typography fontWeight={700} color="gray" fontSize={25}>
             Full Stack Developer
           </Typography>
-          <Typography fontWeight={700} color="gray" fontSize={25}>
-            If the numbers matter to the business, I build applications the business can trust.
-          </Typography>
           <Typography fontWeight={100} mt={1} fontSize={20}>
             <TypeAnimation
               sequence={[
@@ -170,20 +167,15 @@ function App() {
           >
             <Heading img={helloImage} text={"ABOUT ME"} />
             <Typography mt={2} fontWeight={250}>
-              I didn’t get into Java just to write code — I was always curious about how real systems work 
-              behind the scenes and how technology supports critical business operations.
-              Early in my career, I realized that building enterprise software isn’t about frameworks — 
-              it’s about understanding real problems, handling edge cases, and making systems reliable under pressure.
+              I didn’t get into Java just to write code — I was curious about how real systems work and 
+              support critical business operations. Early in my career, I learned enterprise software 
+              isn’t about frameworks; it’s about solving real problems, handling edge cases, and keeping systems 
+              reliable under pressure.
             </Typography>
             <br />
             <Typography fontWeight={250}>
-              As my experience grew, my role naturally moved beyond development into ownership — designing solutions, 
-              troubleshooting production issues, improving performance, and making sure business workflows run 
-              without disruption.
-            </Typography>
-             <br />
-            <Typography fontWeight={250}>
-              Today, with 7+ years of experience, I focus on building Java and Spring Boot applications that 
+              Over time, my role grew into ownership — designing solutions, troubleshooting production issues, 
+              improving performance, and ensuring workflows run without disruption. Today, I build applications that 
               businesses can trust to run their critical operations — with an aim to improve stability, performance, 
               and reliability with every release.
             </Typography>
@@ -228,7 +220,7 @@ function App() {
                 from="2024"
                 to="present"
                 title="Senior Java Full Stack Developer"
-                body="Working on a financial operations platform where accuracy of billing and reconciliation data is critical for business users. Focused on handling historical recalculations, backdated changes, and idempotent processing to keep reports consistent. Spent significant time troubleshooting data mismatches, optimizing slow queries, and stabilizing production behavior. The role has been heavily focused on correctness, performance, and operational reliability."
+                body="Worked on a financial operations platform where accuracy and traceability were critical. Focused on handling historical corrections, reconciliation issues, and production stability. This role strengthened my ownership mindset — building systems that business teams rely on every day."
                 skills={["Java", "SpringBoot","PL/SQL", "React", "Material UI", "PostgreSQL","Oracle", "Kafka"]}
                 company={"Accellor"}
               />
@@ -244,7 +236,7 @@ function App() {
                 from="2022"
                 to="2023"
                 title="Java Full Stack Developer"
-                body="Built backend services for a large-scale deployment tracking platform used by operations teams across regions. Implemented Kafka-based event flows to handle continuous status updates between systems. Addressed real-world issues like duplicate events, out-of-order processing, and data inconsistencies. This experience strengthened my approach to building reliable event-driven systems."
+                body="Built backend services and dashboards to manage large-scale field deployment operations across regions. Worked heavily with real-time status tracking and event processing, which deepened my experience with distributed workflows and operational visibility."
                 skills={[
                   "Java",
                   "SringBoot",
@@ -270,7 +262,7 @@ function App() {
                 from="2020"
                 to="2022"
                 title="Senior Application Engineer"
-                body="Worked on high-traffic order processing services supporting peak retail workloads. Focused on performance tuning, Redis caching, and moving critical flows to asynchronous Kafka processing. Involved in release monitoring and production issue resolution during high-volume periods. This role shaped my understanding of designing systems for scale and stability."
+                body="Worked on a high-volume retail order system handling peak traffic and inventory consistency. Learned to design for performance, caching, and asynchronous processing to keep operations stable during heavy business demand."
                 skills={["Java", "SpringBoot", "Spring Security","Apache Kafka", "REST APIs", "Redis","MySQL", "Cassandra"]}
                 company={"PacWest Bancorp"}
               />
@@ -286,7 +278,7 @@ function App() {
                 from="2018"
                 to="2020"
                 title="Associate Java Developer"
-                body="Developed backend services for a healthcare integration platform handling HL7/FHIR data from multiple systems. Built batch jobs for data synchronization and implemented strong validation and access controls. Supported production issues related to data quality and processing failures. This was my foundation in building reliable, data-sensitive enterprise systems."
+                body="Started my career building healthcare integration services and secure data workflows. This experience built my foundation in API design, data handling, and writing reliable backend logic for real-world systems."
                 skills={["Java", "SpringBoot", "Spring Batch", "JWT", "HL7 / FHIR", "MySQL", "Maven"]}
                 company={"Venturedrive"}
               />
@@ -306,30 +298,16 @@ function App() {
               <Skills
                 title="Backend Technologies"
                 skills={[
-                  "Java",
-                  "SpringBoot",
-                  "Python",
-                  "Django",
-                  "SQL",
-                  "NoSQL",
+                  "Java (8, 11, 17, 21)", "Python","Spring Boot", "Spring MVC", "Spring Security", "Spring Batch", 
+                  "Hibernate", "JPA", "REST APIs", "Microservices", "PL/SQL"
                 ]}
               />
 
               <Skills
                 title="Frontend Technologies"
                 skills={[
-                  "JavaScript",
-                  "React",
-                  "Redux",
-                  "Jest",
-                  "Testing Library",
-                  "Webpack",
-                  "ES6+",
-                  "Angular",
-                  "TypeScript",
-                  "Next.js",
-                  "Tailwind CSS",
-                  "HTML/CSS",
+                  "React", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS","Material UI", 
+                  "Bootstrap", "REST Integration"
                 ]}
               />
             </Box>
@@ -340,25 +318,17 @@ function App() {
               width="100%"
             >
               <Skills
-                title="Cloud Technologies"
+                title="Databases"
                 skills={[
-                  "AWS",
-                  "Azure",
-                  "GCP",
-                  "Docker",
-                  "Kubernetes",
-                  "Terraform",
+                  "PostgreSQL", "Oracle", "MySQL", "MongoDB", "Cassandra", "Redis", "Query Optimization"
                 ]}
               />
 
               <Skills
-                title="Other Skills"
+                title="Cloud & DevOps"
                 skills={[
-                  "Agile Methodologies",
-                  "Git",
-                  "CI/CD",
-                  "Unit Testing",
-                  "Microservices Architecture",
+                  "Azure", "AWS", "GCP", "AKS", "EKS", "GKE", "Docker", "Kubernetes", 
+                  "Jenkins", "CI/CD", "Maven", "Gradle", "Git", "CloudWatch", "Azure Monitor"
                 ]}
               />
             </Box>
@@ -369,19 +339,27 @@ function App() {
               width="100%"
             >
               <Skills
-                title="Soft Skills"
+                title="Security & Integration"
                 skills={[
-                  "Effective Communication",
-                  "Team Collaboration",
-                  "Problem Solving",
-                  "Adaptability",
-                  "Time Management",
+                  "Spring Security", "OAuth2", "JWT", "Role-Based Access Control", "ServiceNow Integration", "SOAP"
                 ]}
               />
 
               <Skills
-                title="Design Tools"
-                skills={["Figma", "Adobe XD", "Sketch", "InVision", "Zeplin"]}
+                title="Messaging & Streaming"
+                skills={["Apache Kafka", "Kafka Streams", "Event-Driven Architecture", "Asynchronous Processing", "Retry Mechanisms"]}
+              />
+            </Box>
+            <Box
+              display="flex"
+              flexDirection={isMobile ? "column" : "row"}
+              width="100%"
+            >
+              <Skills
+                title="AI & Automation"
+                skills={[
+                 "GitHub Copilot", "Claude", "Agentic AI Workflows", "Prompt Engineering", "AI-assisted Development", "Code Generation & Refactoring", "Automated Documentation"
+                ]}
               />
             </Box>
           </Box>
@@ -403,7 +381,7 @@ function App() {
                 icon={untImage}
                 degree="Master of Science"
                 school="University of North Texas"
-                body="Graduated with a Master of Science in Computer Science from the University of North Texas in 2024. During my time at UNT, I developed a strong foundation in software development principles, algorithms, and data structures. I also completed coursework in web development, databases, and cloud computing, which sparked my passion for building scalable and efficient applications."
+                body="Strengthened my ability to work with large datasets, apply analytical thinking, and design reliable, data-driven solutions that support business decisions."
               />
             </motion.div>
           </Box>
