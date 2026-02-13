@@ -1,9 +1,12 @@
-import { Box, Card, Chip, Typography } from "@mui/material";
+import { Box, Card, Chip, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { motion } from "motion/react";
 
 function Skills({ title, skills }) {
   const [enter, setEnter] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Card
       elevation={enter ? 5 : 0}
@@ -33,7 +36,7 @@ function Skills({ title, skills }) {
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ amount: 0.6 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: isMobile ? 0.15 : 0.3, ease: "easeOut" }}
           >
             <Chip
               label={skill}

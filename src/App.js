@@ -214,7 +214,7 @@ function App() {
               initial={{ opacity: 0, x: +120 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ amount: 0.5 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: isMobile ? 0.25 : 0.5, ease: "easeOut" }}
             >
               <Experience
                 from="2024"
@@ -230,7 +230,7 @@ function App() {
               initial={{ opacity: 0, x: -120 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ amount: 0.5 }} // triggers when 50% visible
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: isMobile ? 0.25 : 0.5, ease: "easeOut" }}
             >
               <Experience
                 from="2022"
@@ -256,7 +256,7 @@ function App() {
               initial={{ opacity: 0, x: +120 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ amount: 0.5 }} // triggers when 50% visible
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: isMobile ? 0.25 : 0.5, ease: "easeOut" }}
             >
               <Experience
                 from="2020"
@@ -272,7 +272,7 @@ function App() {
               initial={{ opacity: 0, x: -120 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ amount: 0.5 }} // triggers when 50% visible
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: isMobile ? 0.25 : 0.5, ease: "easeOut" }}
             >
               <Experience
                 from="2018"
@@ -284,7 +284,7 @@ function App() {
               />
             </motion.div>
           </Box>
-          <Box sx={{ height: isMobile ? "5vh" : "10vh" }}></Box>
+          <Box sx={{ height: "5vh" }}></Box>
           <Box ref={skills} id="skills">
             <Box mb={2} pl="20px">
               <Heading img={toolsImage} text={"SKILLS"} />
@@ -363,17 +363,17 @@ function App() {
               />
             </Box>
           </Box>
-          <Box sx={{ height: isMobile ? "5vh" : "10vh" }}></Box>
+          <Box sx={{ height: "5vh" }}></Box>
           <Box ref={projects} id="projects"></Box>
           <Box ref={education} height="100vh" id="education">
-            <Box mb={2} pl="20px">
+            <Box mb={1} pl="20px">
               <Heading img={educationImage} text={"EDUCATION"} />
             </Box>
             <motion.div
               initial={{ opacity: 0, x: +120 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ amount: 0.5 }} // triggers when 50% visible
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: isMobile ? 0.25 : 0.5, ease: "easeOut" }}
             >
               <Education
                 from="2024"
