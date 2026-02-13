@@ -45,11 +45,11 @@ function Education({ from, to, icon, degree, school, body }) {
             color: enter ? "#00853E" : "white",
           }}
         >
-          <Typography noWrap fontWeight="bold">
+          <Typography fontSize={15} noWrap fontWeight="bold">
             {from}
           </Typography>
           <HorizontalRule />
-          <Typography noWrap fontWeight="bold">
+          <Typography fontSize={15} noWrap fontWeight="bold">
             {to}
           </Typography>
         </Box>
@@ -80,7 +80,7 @@ function Education({ from, to, icon, degree, school, body }) {
         >
           {degree}
         </Typography>
-        <Typography fontWeight="bold" color={enter ? "#00853E" : "white"}>
+        <Typography fontSize={15} fontWeight="bold" color={enter ? "#00853E" : "white"}>
           {school} (Data Science)
         </Typography>
         <Box height={10}></Box>

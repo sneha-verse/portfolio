@@ -84,7 +84,7 @@ function App() {
           <Typography fontWeight={700} color="gray" fontSize={25}>
             Full Stack Developer
           </Typography>
-          <Typography fontWeight={100} mt={1} fontSize={20}>
+          <Typography fontFamily={"Roboto Mono"} fontWeight={100} mt={1} fontSize={20}>
             <TypeAnimation
               sequence={[
                 "🟢 Available for work, USA",
@@ -166,14 +166,14 @@ function App() {
             }}
           >
             <Heading img={helloImage} text={"ABOUT ME"} />
-            <Typography mt={2} fontWeight={250}>
+            <Typography mt={2} color="lightgray">
               I didn’t get into Java just to write code — I was curious about how real systems work and 
               support critical business operations. Early in my career, I learned enterprise software 
               isn’t about frameworks; it’s about solving real problems, handling edge cases, and keeping systems 
               reliable under pressure.
             </Typography>
             <br />
-            <Typography fontWeight={250}>
+            <Typography color="lightgray">
               Over time, my role grew into ownership — designing solutions, troubleshooting production issues, 
               improving performance, and ensuring workflows run without disruption. Today, I build applications that 
               businesses can trust to run their critical operations — with an aim to improve stability, performance, 
@@ -201,7 +201,7 @@ function App() {
               />
             </Box>
           </Box>
-          <Box sx={{ height: "5vh" }}></Box>
+          <Box sx={{ height: isMobile ? 0 : "5vh" }}></Box>
           <Box
             ref={experience}
             id="experience"
@@ -213,7 +213,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: +120 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ amount: 0.6 }} // triggers when 50% visible
+              viewport={{ amount: 0.5 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Experience
@@ -229,7 +229,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: -120 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ amount: 0.6 }} // triggers when 50% visible
+              viewport={{ amount: 0.5 }} // triggers when 50% visible
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Experience
@@ -255,7 +255,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: +120 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ amount: 0.6 }} // triggers when 50% visible
+              viewport={{ amount: 0.5 }} // triggers when 50% visible
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Experience
@@ -271,7 +271,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: -120 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ amount: 0.6 }} // triggers when 50% visible
+              viewport={{ amount: 0.5 }} // triggers when 50% visible
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Experience
@@ -284,7 +284,7 @@ function App() {
               />
             </motion.div>
           </Box>
-          <Box sx={{ height: "10vh" }}></Box>
+          <Box sx={{ height: isMobile ? "5vh" : "10vh" }}></Box>
           <Box ref={skills} id="skills">
             <Box mb={2} pl="20px">
               <Heading img={toolsImage} text={"SKILLS"} />
@@ -363,7 +363,7 @@ function App() {
               />
             </Box>
           </Box>
-          <Box sx={{ height: "10vh" }}></Box>
+          <Box sx={{ height: isMobile ? "5vh" : "10vh" }}></Box>
           <Box ref={projects} id="projects"></Box>
           <Box ref={education} height="100vh" id="education">
             <Box mb={2} pl="20px">
@@ -372,7 +372,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: +120 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ amount: 0.6 }} // triggers when 50% visible
+              viewport={{ amount: 0.5 }} // triggers when 50% visible
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Education
@@ -393,7 +393,7 @@ function App() {
         style={{
           position: "absolute",
           width: "100vw",
-          height: "99vh",
+          height: isMobile ? "100%" : "99vh",
           top: 0,
           left: 0,
           zIndex: 1,

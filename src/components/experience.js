@@ -19,14 +19,14 @@ function Experience({ from, to, title, body, skills, company }) {
             }}
         >
             <Box sx={{ width: isMobile ? "100%" : "25%", display: "flex", flexDirection: "row", color: enter ? "#1eca3b" : "white"}}>
-                <Typography fontWeight="bold" mr={1}>{from}</Typography>
+                <Typography fontSize={16} fontWeight="bold" mr={1}>{from}</Typography>
                 <HorizontalRule />
-                <Typography fontWeight="bold" ml={1}>{to}</Typography>
+                <Typography fontSize={16} fontWeight="bold" ml={1}>{to}</Typography>
             </Box>
             <Box sx={{ width: isMobile ? "100%" : "75%", display: "flex", flexDirection: "column" }}>
-                <Typography fontWeight="bold" color={enter ? "#1eca3b" : "white"}>{title} • {company}</Typography>
+                <Typography fontSize={16} fontWeight="bold" color={enter ? "#1eca3b" : "white"}>{title} • {company}</Typography>
                 <Box height={10}></Box>
-                <Typography fontSize={15} color="lightgray">{body}</Typography>
+                <Typography color="lightgray">{body}</Typography>
                 <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                     {
                         skills.map((skill) =>

@@ -24,7 +24,7 @@ function Skills({ title, skills }) {
         setEnter(false);
       }}
     >
-      <Typography mb={1} fontWeight="bold" fontSize={20}>
+      <Typography mb={1} fontWeight="bold" fontSize={15}>
         {title}
       </Typography>
       <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
@@ -37,13 +37,13 @@ function Skills({ title, skills }) {
           >
             <Chip
               label={skill}
-              size="medium"
+              size="small"
               variant="filled"
               sx={{
                 marginRight: "5px",
                 marginTop: "10px",
                 color: "white",
-                fontSize: "15px",
+                fontSize: "13px",
                 backgroundColor: "#0F4C75",
               }}
             />
