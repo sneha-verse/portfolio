@@ -1,4 +1,11 @@
-import { Box, Paper, Typography, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Paper,
+  Typography,
+  useTheme,
+  useMediaQuery,
+  SvgIcon,
+} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
@@ -11,6 +18,7 @@ import helloImage from "./assets/hello.svg";
 import briefcaseImage from "./assets/briefcase.svg";
 import toolsImage from "./assets/tools.svg";
 import educationImage from "./assets/education.svg";
+import {ReactComponent as mediumImage} from "./assets/medium.svg";
 import untImage from "./assets/unt.png";
 import useVisibility from "./hooks/useVisibility";
 import Heading from "./components/heading";
@@ -20,6 +28,7 @@ import { TypeAnimation } from "react-type-animation";
 import SideMenu from "./components/menu";
 import Skills from "./components/skills";
 import Education from "./components/education";
+import CustomIconButton from "./components/iconbutton";
 
 function App() {
   const theme = useTheme();
@@ -41,6 +50,40 @@ function App() {
   const handleLeftScroll = (e) => {
     if (mainContent.current) {
       mainContent.current.scrollTop += e.deltaY;
+    }
+  };
+
+  const scrollToWithOffset = (sectionRef) => {
+    if (!mainContent.current || !sectionRef.current) return;
+
+    const container = mainContent.current;
+    const section = sectionRef.current;
+
+    const offset = container.clientHeight * 0.1;
+
+    const top = section.offsetTop - offset;
+
+    container.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  };
+
+  const handleMenuClick = (section) => {
+    if (section === "about" && about.current) {
+      scrollToWithOffset(about);
+    } else if (section === "experience" && experience.current) {
+      scrollToWithOffset(experience);
+    } else if (section === "skills" && skills.current) {
+      scrollToWithOffset(skills);
+    } else if (section === "projects" && projects.current) {
+      scrollToWithOffset(projects);
+    } else if (section === "education" && education.current) {
+      scrollToWithOffset(education);
+    } else if (section === "resume" && resume.current) {
+      scrollToWithOffset(resume);
+    } else if (section === "contact" && contact.current) {
+      scrollToWithOffset(contact);
     }
   };
 
@@ -74,6 +117,7 @@ function App() {
             width: isMobile ? "100%" : "70%",
             display: "flex",
             flexDirection: "column",
+            alignItems: "start",
             height: isMobile ? "100%" : "100vh",
           }}
         >
@@ -84,7 +128,12 @@ function App() {
           <Typography fontWeight={700} color="gray" fontSize={25}>
             Full Stack Developer
           </Typography>
-          <Typography fontFamily={"Roboto Mono"} fontWeight={100} mt={1} fontSize={20}>
+          <Typography
+            fontFamily={"Roboto Mono"}
+            fontWeight={100}
+            mt={1}
+            fontSize={20}
+          >
             <TypeAnimation
               sequence={[
                 "🟢 Available for work, USA",
@@ -114,6 +163,7 @@ function App() {
               educationVisibility={educationVisibility}
               resumeVisibility={resumeVisibility}
               contactVisibility={contactVisibility}
+              onClick={handleMenuClick}
             />
           )}
 
@@ -123,13 +173,32 @@ function App() {
             sx={{ display: "flex", flexDirection: "row", marginTop: "auto" }}
           >
             <Box mr={3}>
-              <GitHubIcon fontSize="large" />
+              <CustomIconButton
+                href="https://github.com/sneha-verse"
+                icon={<GitHubIcon sx={{ color: "white" }} fontSize="large" />}
+                text="GitHub"
+              />
             </Box>
             <Box mr={3}>
-              <LinkedInIcon fontSize="large" />
+              <CustomIconButton
+                href="https://www.linkedin.com/in/snehaa02/"
+                icon={<LinkedInIcon sx={{ color: "white" }} fontSize="large" />}
+                text="LinkedIn"
+              />
             </Box>
             <Box mr={3}>
-              <EmailIcon fontSize="large" />
+              <CustomIconButton
+                href="https://www.linkedin.com/in/snehaa02/"
+                icon={<SvgIcon component={mediumImage} inheritViewBox fontSize="large" sx={{padding: "3px", boxSizing: "border-box"}}/>}
+                text="Medium"
+              />
+            </Box>
+            <Box mr={3}>
+              <CustomIconButton
+                href="mailto:sneha.annamareddy@gmail.com"
+                icon={<EmailIcon sx={{ color: "white" }} fontSize="large" />}
+                text="Gmail"
+              />
             </Box>
           </Box>
           <Box sx={{ height: isMobile ? 0 : "9vh" }}></Box>
@@ -167,17 +236,20 @@ function App() {
           >
             <Heading img={helloImage} text={"ABOUT ME"} />
             <Typography mt={2} color="lightgray">
-              I didn’t get into Java just to write code — I was curious about how real systems work and 
-              support critical business operations. Early in my career, I learned enterprise software 
-              isn’t about frameworks; it’s about solving real problems, handling edge cases, and keeping systems 
-              reliable under pressure.
+              I didn’t get into Java just to write code — I was curious about
+              how real systems work and support critical business operations.
+              Early in my career, I learned enterprise software isn’t about
+              frameworks; it’s about solving real problems, handling edge cases,
+              and keeping systems reliable under pressure.
             </Typography>
             <br />
             <Typography color="lightgray">
-              Over time, my role grew into ownership — designing solutions, troubleshooting production issues, 
-              improving performance, and ensuring workflows run without disruption. Today, I build applications that 
-              businesses can trust to run their critical operations — with an aim to improve stability, performance, 
-              and reliability with every release.
+              Over time, my role grew into ownership — designing solutions,
+              troubleshooting production issues, improving performance, and
+              ensuring workflows run without disruption. Today, I build
+              applications that businesses can trust to run their critical
+              operations — with an aim to improve stability, performance, and
+              reliability with every release.
             </Typography>
             <Box
               sx={{
@@ -201,7 +273,7 @@ function App() {
               />
             </Box>
           </Box>
-          <Box sx={{ height: isMobile ? 0 : "5vh" }}></Box>
+          <Box sx={{ height: isMobile ? 0 : "10vh" }}></Box>
           <Box
             ref={experience}
             id="experience"
@@ -221,7 +293,16 @@ function App() {
                 to="present"
                 title="Senior Java Full Stack Developer"
                 body="Worked on a financial operations platform where accuracy and traceability were critical. Focused on handling historical corrections, reconciliation issues, and production stability. This role strengthened my ownership mindset — building systems that business teams rely on every day."
-                skills={["Java", "SpringBoot","PL/SQL", "React", "Material UI", "PostgreSQL","Oracle", "Kafka"]}
+                skills={[
+                  "Java",
+                  "SpringBoot",
+                  "PL/SQL",
+                  "React",
+                  "Material UI",
+                  "PostgreSQL",
+                  "Oracle",
+                  "Kafka",
+                ]}
                 company={"Accellor"}
               />
             </motion.div>
@@ -263,7 +344,16 @@ function App() {
                 to="2022"
                 title="Senior Application Engineer"
                 body="Worked on a high-volume retail order system handling peak traffic and inventory consistency. Learned to design for performance, caching, and asynchronous processing to keep operations stable during heavy business demand."
-                skills={["Java", "SpringBoot", "Spring Security","Apache Kafka", "REST APIs", "Redis","MySQL", "Cassandra"]}
+                skills={[
+                  "Java",
+                  "SpringBoot",
+                  "Spring Security",
+                  "Apache Kafka",
+                  "REST APIs",
+                  "Redis",
+                  "MySQL",
+                  "Cassandra",
+                ]}
                 company={"PacWest Bancorp"}
               />
             </motion.div>
@@ -279,12 +369,20 @@ function App() {
                 to="2020"
                 title="Associate Java Developer"
                 body="Started my career building healthcare integration services and secure data workflows. This experience built my foundation in API design, data handling, and writing reliable backend logic for real-world systems."
-                skills={["Java", "SpringBoot", "Spring Batch", "JWT", "HL7 / FHIR", "MySQL", "Maven"]}
+                skills={[
+                  "Java",
+                  "SpringBoot",
+                  "Spring Batch",
+                  "JWT",
+                  "HL7 / FHIR",
+                  "MySQL",
+                  "Maven",
+                ]}
                 company={"Venturedrive"}
               />
             </motion.div>
           </Box>
-          <Box sx={{ height: "5vh" }}></Box>
+          <Box sx={{ height: "10vh" }}></Box>
           <Box ref={skills} id="skills">
             <Box mb={2} pl="20px">
               <Heading img={toolsImage} text={"SKILLS"} />
@@ -298,16 +396,33 @@ function App() {
               <Skills
                 title="Backend Technologies"
                 skills={[
-                  "Java (8, 11, 17, 21)", "Python","Spring Boot", "Spring MVC", "Spring Security", "Spring Batch", 
-                  "Hibernate", "JPA", "REST APIs", "Microservices", "PL/SQL"
+                  "Java (8, 11, 17, 21)",
+                  "Python",
+                  "Spring Boot",
+                  "Spring MVC",
+                  "Spring Security",
+                  "Spring Batch",
+                  "Hibernate",
+                  "JPA",
+                  "REST APIs",
+                  "Microservices",
+                  "PL/SQL",
                 ]}
               />
 
               <Skills
                 title="Frontend Technologies"
                 skills={[
-                  "React", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS","Material UI", 
-                  "Bootstrap", "REST Integration"
+                  "React",
+                  "Angular",
+                  "TypeScript",
+                  "JavaScript",
+                  "HTML5",
+                  "CSS3",
+                  "Tailwind CSS",
+                  "Material UI",
+                  "Bootstrap",
+                  "REST Integration",
                 ]}
               />
             </Box>
@@ -320,15 +435,34 @@ function App() {
               <Skills
                 title="Databases"
                 skills={[
-                  "PostgreSQL", "Oracle", "MySQL", "MongoDB", "Cassandra", "Redis", "Query Optimization"
+                  "PostgreSQL",
+                  "Oracle",
+                  "MySQL",
+                  "MongoDB",
+                  "Cassandra",
+                  "Redis",
+                  "Query Optimization",
                 ]}
               />
 
               <Skills
                 title="Cloud & DevOps"
                 skills={[
-                  "Azure", "AWS", "GCP", "AKS", "EKS", "GKE", "Docker", "Kubernetes", 
-                  "Jenkins", "CI/CD", "Maven", "Gradle", "Git", "CloudWatch", "Azure Monitor"
+                  "Azure",
+                  "AWS",
+                  "GCP",
+                  "AKS",
+                  "EKS",
+                  "GKE",
+                  "Docker",
+                  "Kubernetes",
+                  "Jenkins",
+                  "CI/CD",
+                  "Maven",
+                  "Gradle",
+                  "Git",
+                  "CloudWatch",
+                  "Azure Monitor",
                 ]}
               />
             </Box>
@@ -341,13 +475,24 @@ function App() {
               <Skills
                 title="Security & Integration"
                 skills={[
-                  "Spring Security", "OAuth2", "JWT", "Role-Based Access Control", "ServiceNow Integration", "SOAP"
+                  "Spring Security",
+                  "OAuth2",
+                  "JWT",
+                  "Role-Based Access Control",
+                  "ServiceNow Integration",
+                  "SOAP",
                 ]}
               />
 
               <Skills
                 title="Messaging & Streaming"
-                skills={["Apache Kafka", "Kafka Streams", "Event-Driven Architecture", "Asynchronous Processing", "Retry Mechanisms"]}
+                skills={[
+                  "Apache Kafka",
+                  "Kafka Streams",
+                  "Event-Driven Architecture",
+                  "Asynchronous Processing",
+                  "Retry Mechanisms",
+                ]}
               />
             </Box>
             <Box
@@ -358,12 +503,18 @@ function App() {
               <Skills
                 title="AI & Automation"
                 skills={[
-                 "GitHub Copilot", "Claude", "Agentic AI Workflows", "Prompt Engineering", "AI-assisted Development", "Code Generation & Refactoring", "Automated Documentation"
+                  "GitHub Copilot",
+                  "Claude",
+                  "Agentic AI Workflows",
+                  "Prompt Engineering",
+                  "AI-assisted Development",
+                  "Code Generation & Refactoring",
+                  "Automated Documentation",
                 ]}
               />
             </Box>
           </Box>
-          <Box sx={{ height: "5vh" }}></Box>
+          <Box sx={{ height: "10vh" }}></Box>
           <Box ref={projects} id="projects"></Box>
           <Box ref={education} height="100vh" id="education">
             <Box mb={1} pl="20px">

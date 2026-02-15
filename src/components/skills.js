@@ -1,11 +1,9 @@
-import { Box, Card, Chip, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Card, Chip, Typography } from "@mui/material";
 import { useState } from "react";
 import { motion } from "motion/react";
 
 function Skills({ title, skills }) {
   const [enter, setEnter] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Card
@@ -31,12 +29,20 @@ function Skills({ title, skills }) {
         {title}
       </Typography>
       <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-        {skills.map((skill) => (
+        {skills.map((skill, index) => (
           <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ scale: 0.75, opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              transition: {
+                duration: 0.3,
+                ease: "easeOut",
+                delay: (1 / skills.length) * index,
+              },
+            }}
             viewport={{ amount: 0.6 }}
-            transition={{ duration: isMobile ? 0.15 : 0.3, ease: "easeOut" }}
+            exit={{ scale: 0, opacity: 0, transition: { duration: 0 } }}
           >
             <Chip
               label={skill}
