@@ -56,11 +56,6 @@ export default function DownloadResume() {
     <div
       style={{
         position: "relative",
-        background: `
-          radial-gradient(ellipse 70% 60% at 50% 50%, rgba(56, 189, 248, 0.06), transparent),
-          radial-gradient(ellipse 50% 80% at 100% 0%, ${tokens.indigo}, transparent),
-          linear-gradient(180deg, ${tokens.bgDeep} 0%, ${tokens.bg} 100%)
-        `,
         color: tokens.text,
         overflow: "hidden",
         display: "flex",
@@ -69,21 +64,6 @@ export default function DownloadResume() {
         padding: "100px 24px",
       }}
     >
-      {/* Decorative top divider */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: "10%",
-          right: "10%",
-          height: 1,
-          background: `linear-gradient(90deg, transparent, ${tokens.accent}33, transparent)`,
-          transformOrigin: "center",
-        }}
-      />
 
       <div
         style={{

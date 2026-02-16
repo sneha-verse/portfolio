@@ -95,76 +95,6 @@ const labelStyle = {
   display: "block",
 };
 
-function RecruiterToggle({ value, onChange, delay = 0 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <label style={{ ...labelStyle, marginBottom: 14 }}>
-        Are you a recruiter?
-      </label>
-      <div style={{ display: "flex", gap: 12 }}>
-        {["Yes", "No"].map((option) => {
-          const isActive = value === option;
-          return (
-            <motion.button
-              key={option}
-              onClick={() => onChange(option)}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              style={{
-                flex: 1,
-                padding: "14px 24px",
-                borderRadius: 12,
-                border: `1.5px solid ${isActive ? tokens.accent : tokens.border}`,
-                background: isActive
-                  ? tokens.accentDim
-                  : "rgba(255,255,255,0.02)",
-                color: isActive ? tokens.accent : tokens.textMuted,
-                fontFamily: tokens.fontSans,
-                fontSize: 14,
-                fontWeight: 500,
-                cursor: "pointer",
-                transition: "all 0.3s",
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
-              {/* Active glow */}
-              {isActive && (
-                <motion.div
-                  layoutId="recruiter-glow"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    borderRadius: 12,
-                    background: `radial-gradient(circle at center, ${tokens.accentDim}, transparent 70%)`,
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
-              <span
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 8,
-                }}
-              >
-                {option === "Yes" ? "👋" : "💼"} {option}
-              </span>
-            </motion.button>
-          );
-        })}
-      </div>
-    </motion.div>
-  );
-}
-
 function SendIcon() {
   return (
     <svg
@@ -188,8 +118,7 @@ export default function ContactSection() {
     firstName: "",
     lastName: "",
     email: "",
-    message: "",
-    recruiter: null,
+    message: ""
   });
   const [submitted, setSubmitted] = useState(false);
   const sectionRef = useRef(null);
@@ -216,7 +145,7 @@ export default function ContactSection() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "120px 24px",
+        padding: "0px 24px 10px 24px",
       }}
     >
 
@@ -313,12 +242,6 @@ export default function ContactSection() {
                 value={form.message}
                 onChange={update("message")}
                 delay={0.54}
-              />
-
-              <RecruiterToggle
-                value={form.recruiter}
-                onChange={(val) => setForm((p) => ({ ...p, recruiter: val }))}
-                delay={0.62}
               />
 
               {/* Submit */}
@@ -454,8 +377,6 @@ export default function ContactSection() {
                 Thanks for reaching out
                 {form.firstName ? `, ${form.firstName}` : ""}! I'll get back to
                 you as soon as possible.
-                {form.recruiter === "Yes" &&
-                  " Looking forward to connecting about opportunities."}
               </motion.p>
 
               <motion.button
@@ -468,8 +389,7 @@ export default function ContactSection() {
                     firstName: "",
                     lastName: "",
                     email: "",
-                    message: "",
-                    recruiter: null,
+                    message: ""
                   });
                 }}
                 style={{

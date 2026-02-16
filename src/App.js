@@ -10,9 +10,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Experience from "./components/experience";
-import "particles.js";
 import { useEffect, useRef, useState } from "react";
-// import particlesConfig from "./particles.json";
 import profileImage from "./assets/profile.svg";
 import helloImage from "./assets/hello.svg";
 import briefcaseImage from "./assets/briefcase.svg";
@@ -32,14 +30,11 @@ import CustomIconButton from "./components/iconbutton";
 import DownloadResume from "./components/resume";
 import ContactSection from "./components/contact";
 import tokens from "./tokens";
+import Particles from "./components/particles";
 
 function App() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-  // useEffect(() => {
-  //   window.particlesJS("particles-js", particlesConfig);
-  // }, []);
 
   const mainContent = useRef(null);
   const [about, aboutVisibility] = useVisibility();
@@ -123,11 +118,12 @@ function App() {
         style={{
           position: "absolute",
           inset: 0,
-          background: `radial-gradient(600px circle at ${mousePos.x}% ${mousePos.y}%, ${tokens.accentGlow}, transparent 60%)`,
+          background: `radial-gradient(600px circle at ${mousePos.x}% ${mousePos.y}%, rgba(56, 189, 248, 0.08), transparent 60%)`,
           pointerEvents: "none",
           transition: "background 0.3s ease",
         }}
       />
+      <Particles count={100} />
       <div
         style={{
           position: "absolute",
@@ -585,27 +581,14 @@ function App() {
               />
             </motion.div>
           </Box>
-          <Box ref={resume} height="100vh" id="resume">
+          <Box ref={resume} height="90vh" id="resume">
             <DownloadResume />
           </Box>
-          <Box ref={contact} id="contact">
+          <Box ref={contact} height="90vh" id="contact">
             <ContactSection />
           </Box>
         </Box>
       </Box>
-      {/* <div
-        style={{
-          position: "absolute",
-          width: "100vw",
-          height: isMobile ? "100%" : "99vh",
-          top: 0,
-          left: 0,
-          zIndex: 1,
-          opacity: 0.3,
-          margin: 0,
-        }}
-        id="particles-js"
-      ></div> */}
     </Paper>
   );
 }

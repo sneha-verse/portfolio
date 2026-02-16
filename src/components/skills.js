@@ -38,7 +38,7 @@ function Skills({ title, skills }) {
         animate={{ opacity: enter ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       />
-      <Typography mb={1} fontWeight="bold" fontSize={15}>
+      <Typography mb={1} fontSize={15}>
         {title}
       </Typography>
       <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>

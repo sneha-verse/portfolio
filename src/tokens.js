@@ -8,7 +8,7 @@ const tokens = {
   text: "#E2E8F0",
   textMuted: "#94A3B8",
   textDim: "#64748B",
-  border: "rgb(29, 44, 80)",
+  border: "rgba(56, 189, 248, 0.09)",
   font: "'Instrument Serif', Georgia, serif",
   fontMono: "'JetBrains Mono', 'SF Mono', monospace",
   fontSans: "'DM Sans', 'Helvetica Neue', sans-serif",
