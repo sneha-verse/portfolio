@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { motion } from "motion/react";
 
 function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, projectsVisibility, educationVisibility, resumeVisibility, contactVisibility, onClick }) {
@@ -27,13 +27,13 @@ function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, pro
             <Box onClick={() => onClick("skills")} sx={{ cursor: "pointer" }}>SKILLS</Box>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
             initial={{ fontWeight: 100, fontSize: 20 }}
             animate={projectsVisibility ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
             transition={{ duration: 0.5 }}
         >
             <Box onClick={() => onClick("projects")} sx={{ cursor: "pointer" }}>PROJECTS</Box>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
             initial={{ fontWeight: 100, fontSize: 20 }}

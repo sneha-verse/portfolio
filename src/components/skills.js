@@ -7,16 +7,17 @@ function Skills({ title, skills }) {
 
   return (
     <Card
-      elevation={enter ? 5 : 0}
+      elevation={enter ? 1 : 0}
       sx={{
         display: "flex",
         width: "100%",
-        backgroundColor: enter ? "rgb(24, 38, 69)" : "rgba(0, 0, 0, 0)",
+        backgroundColor: "rgba(0, 0, 0, 0)",
         color: "white",
         padding: "20px",
         cursor: "pointer",
         flexDirection: "column",
         boxSizing: "border-box",
+        position: "relative",
       }}
       onMouseEnter={() => {
         setEnter(true);
@@ -25,6 +26,18 @@ function Skills({ title, skills }) {
         setEnter(false);
       }}
     >
+      <motion.div
+        style={{
+          position: "absolute",
+          inset: "0 -20px",
+          background: "rgba(56, 189, 248, 0.1)",
+          borderRadius: 8,
+          opacity: 0,
+          pointerEvents: "none",
+        }}
+        animate={{ opacity: enter ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
       <Typography mb={1} fontWeight="bold" fontSize={15}>
         {title}
       </Typography>

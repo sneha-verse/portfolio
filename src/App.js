@@ -11,14 +11,14 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Experience from "./components/experience";
 import "particles.js";
-import { useEffect, useRef } from "react";
-import particlesConfig from "./particles.json";
+import { useEffect, useRef, useState } from "react";
+// import particlesConfig from "./particles.json";
 import profileImage from "./assets/profile.svg";
 import helloImage from "./assets/hello.svg";
 import briefcaseImage from "./assets/briefcase.svg";
 import toolsImage from "./assets/tools.svg";
 import educationImage from "./assets/education.svg";
-import {ReactComponent as mediumImage} from "./assets/medium.svg";
+import { ReactComponent as mediumImage } from "./assets/medium.svg";
 import untImage from "./assets/unt.png";
 import useVisibility from "./hooks/useVisibility";
 import Heading from "./components/heading";
@@ -29,14 +29,17 @@ import SideMenu from "./components/menu";
 import Skills from "./components/skills";
 import Education from "./components/education";
 import CustomIconButton from "./components/iconbutton";
+import DownloadResume from "./components/resume";
+import ContactSection from "./components/contact";
+import tokens from "./tokens";
 
 function App() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  useEffect(() => {
-    window.particlesJS("particles-js", particlesConfig);
-  }, []);
+  // useEffect(() => {
+  //   window.particlesJS("particles-js", particlesConfig);
+  // }, []);
 
   const mainContent = useRef(null);
   const [about, aboutVisibility] = useVisibility();
@@ -87,6 +90,23 @@ function App() {
     }
   };
 
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <Paper
       sx={{
@@ -99,6 +119,28 @@ function App() {
         justifyContent: "center",
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: `radial-gradient(600px circle at ${mousePos.x}% ${mousePos.y}%, ${tokens.accentGlow}, transparent 60%)`,
+          pointerEvents: "none",
+          transition: "background 0.3s ease",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `
+            linear-gradient(${tokens.border} 1px, transparent 1px),
+            linear-gradient(90deg, ${tokens.border} 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+          opacity: 0.4,
+          pointerEvents: "none",
+        }}
+      />
       <Box
         onWheel={handleLeftScroll}
         sx={{
@@ -189,7 +231,14 @@ function App() {
             <Box mr={3}>
               <CustomIconButton
                 href="https://www.linkedin.com/in/snehaa02/"
-                icon={<SvgIcon component={mediumImage} inheritViewBox fontSize="large" sx={{padding: "3px", boxSizing: "border-box"}}/>}
+                icon={
+                  <SvgIcon
+                    component={mediumImage}
+                    inheritViewBox
+                    fontSize="large"
+                    sx={{ padding: "3px", boxSizing: "border-box" }}
+                  />
+                }
                 text="Medium"
               />
             </Box>
@@ -515,8 +564,8 @@ function App() {
             </Box>
           </Box>
           <Box sx={{ height: "10vh" }}></Box>
-          <Box ref={projects} id="projects"></Box>
-          <Box ref={education} height="100vh" id="education">
+          {/* <Box ref={projects} id="projects"></Box> */}
+          <Box ref={education} id="education">
             <Box mb={1} pl="20px">
               <Heading img={educationImage} text={"EDUCATION"} />
             </Box>
@@ -536,11 +585,15 @@ function App() {
               />
             </motion.div>
           </Box>
-          <Box ref={resume} height="100vh" id="resume"></Box>
-          <Box ref={contact} height="100vh" id="contact"></Box>
+          <Box ref={resume} height="100vh" id="resume">
+            <DownloadResume />
+          </Box>
+          <Box ref={contact} id="contact">
+            <ContactSection />
+          </Box>
         </Box>
       </Box>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           width: "100vw",
@@ -552,7 +605,7 @@ function App() {
           margin: 0,
         }}
         id="particles-js"
-      ></div>
+      ></div> */}
     </Paper>
   );
 }

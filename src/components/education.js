@@ -1,6 +1,7 @@
 import { HorizontalRule } from "@mui/icons-material";
 import { Box, Card, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 function Education({ from, to, icon, degree, school, body }) {
   const [enter, setEnter] = useState(false);
@@ -9,17 +10,18 @@ function Education({ from, to, icon, degree, school, body }) {
 
   return (
     <Card
-      elevation={enter ? 5 : 0}
+      elevation={enter ? 1 : 0}
       sx={{
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
         width: "100%",
-        backgroundColor: enter ? "rgb(24, 38, 69)" : "rgba(0, 0, 0, 0)",
+        backgroundColor: "rgba(0, 0, 0, 0)",
         color: "white",
         padding: "20px",
         cursor: "pointer",
         pointerEvents: "auto",
         boxSizing: "border-box",
+        position: "relative",
       }}
       onMouseEnter={() => {
         setEnter(true);
@@ -28,6 +30,18 @@ function Education({ from, to, icon, degree, school, body }) {
         setEnter(false);
       }}
     >
+      <motion.div
+        style={{
+          position: "absolute",
+          inset: "0 -20px",
+          background: "rgba(56, 189, 248, 0.1)",
+          borderRadius: 8,
+          opacity: 0,
+          pointerEvents: "none",
+        }}
+        animate={{ opacity: enter ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
       <Box
         sx={{
           width: isMobile ? "100%" : "25%",
@@ -42,7 +56,7 @@ function Education({ from, to, icon, degree, school, body }) {
             display: "flex",
             flexDirection: "row",
             justifyContent: isMobile ? "start" : "space-around",
-            color: enter ? "#00853E" : "white",
+            color: enter ? "#38BDF8" : "white",
           }}
         >
           <Typography fontSize={15} noWrap fontWeight="bold">
@@ -76,11 +90,15 @@ function Education({ from, to, icon, degree, school, body }) {
           fontWeight="bold"
           sx={{ margin: 0 }}
           fontSize={30}
-          color={enter ? "#00853E" : "white"}
+          color={enter ? "#38BDF8" : "white"}
         >
           {degree}
         </Typography>
-        <Typography fontSize={15} fontWeight="bold" color={enter ? "#00853E" : "white"}>
+        <Typography
+          fontSize={15}
+          fontWeight="bold"
+          color={enter ? "#38BDF8" : "white"}
+        >
           {school} (Data Science)
         </Typography>
         <Box height={10}></Box>
