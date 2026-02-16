@@ -581,7 +581,8 @@ function App() {
               />
             </motion.div>
           </Box>
-          <Box ref={resume} height="90vh" id="resume">
+          <Box sx={{ height: "10vh" }}></Box>
+          <Box ref={resume} height="100vh" id="resume">
             <DownloadResume />
           </Box>
           <Box ref={contact} height="90vh" id="contact">

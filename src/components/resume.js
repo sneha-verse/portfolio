@@ -60,8 +60,7 @@ export default function DownloadResume() {
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "100px 24px",
+        justifyContent: "center"
       }}
     >
 
