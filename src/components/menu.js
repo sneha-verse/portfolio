@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import { motion } from "motion/react";
 
-function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, projectsVisibility, educationVisibility, resumeVisibility, contactVisibility, onClick }) {
+function SideMenu({ visibility, onClick }) {
     return (<>
         <motion.div
             initial={{ fontWeight: 200, fontSize: 20 }}
-            animate={aboutVisibility ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10} : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
+            animate={visibility.about ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10} : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
             transition={{ duration: 0.5 }}
         >
             <Box onClick={() => onClick("about")} sx={{ cursor: "pointer" }}>ABOUT</Box>
@@ -13,7 +13,7 @@ function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, pro
 
         <motion.div
             initial={{ fontWeight: 100, fontSize: 20 }}
-            animate={experienceVisibility ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
+            animate={visibility.experience ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
             transition={{ duration: 0.5 }}
         >
             <Box onClick={() => onClick("experience")} sx={{ cursor: "pointer" }}>EXPERIENCE</Box>
@@ -21,7 +21,7 @@ function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, pro
 
         <motion.div
             initial={{ fontWeight: 100, fontSize: 20 }}
-            animate={skillsVisibility ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
+            animate={visibility.skills ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
             transition={{ duration: 0.5 }}
         >
             <Box onClick={() => onClick("skills")} sx={{ cursor: "pointer" }}>SKILLS</Box>
@@ -37,7 +37,7 @@ function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, pro
 
         <motion.div
             initial={{ fontWeight: 100, fontSize: 20 }}
-            animate={educationVisibility ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
+            animate={visibility.education ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
             transition={{ duration: 0.5 }}
         >
             <Box onClick={() => onClick("education")} sx={{ cursor: "pointer" }}>EDUCATION</Box>
@@ -45,7 +45,7 @@ function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, pro
 
         <motion.div
             initial={{ fontWeight: 100, fontSize: 20 }}
-            animate={resumeVisibility ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
+            animate={visibility.resume ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
             transition={{ duration: 0.5 }}
         >
             <Box onClick={() => onClick("resume")} sx={{ cursor: "pointer" }}>RESUME</Box>
@@ -53,7 +53,7 @@ function SideMenu({ aboutVisibility, experienceVisibility, skillsVisibility, pro
 
         <motion.div
             initial={{ fontWeight: 100, fontSize: 20 }}
-            animate={contactVisibility ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
+            animate={visibility.contact ? { fontWeight: 700, fontSize: 25, marginTop: 10, marginBottom: 10 } : { fontWeight: 200, fontSize: 20, marginTop: 5, marginBottom: 5, color: "lightgray" }}
             transition={{ duration: 0.5 }}
         >
             <Box onClick={() => onClick("contact")} sx={{ cursor: "pointer" }}>CONTACT</Box>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import MagneticButton from "./magneticbutton";
+import MagneticButton from "./buttons/magneticbutton";
 import tokens from "../tokens";
 
 function FileIcon() {

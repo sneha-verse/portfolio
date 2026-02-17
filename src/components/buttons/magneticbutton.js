@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring } from "motion/react";
-import tokens from "../tokens";
+import tokens from "../../tokens";
 import { useRef, useState } from "react";
 
 export default function MagneticButton({ children, onClick, large, disabled }) {

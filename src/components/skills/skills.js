@@ -44,6 +44,7 @@ function Skills({ title, skills }) {
       <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
         {skills.map((skill, index) => (
           <motion.div
+            key={skill}
             initial={{ scale: 0.75, opacity: 0 }}
             whileInView={{
               opacity: 1,

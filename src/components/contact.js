@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import tokens from "../tokens";
-import MagneticButton from "./magneticbutton";
+import MagneticButton from "./buttons/magneticbutton";
 
 function FloatingInput({
   label,

@@ -83,6 +83,7 @@ function Experience({ from, to, title, body, skills, company }) {
         <Box sx={{ display: "flex", flexWrap: "wrap" }}>
           {skills.map((skill) => (
             <Chip
+              key={skill}
               label={skill}
               size="small"
               variant="filled"
