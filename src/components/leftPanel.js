@@ -81,7 +81,7 @@ const LeftPanel = React.memo(({ visibility, refsMap, mainContent }) => {
           Sneha Annamareddy
         </Typography>
         <Typography fontWeight={700} color="gray" fontSize={25}>
-          Full Stack Developer
+          Senior Software Developer
         </Typography>
         <Typography
           fontFamily={"Roboto Mono"}

@@ -13,7 +13,7 @@ function ExperienceSection({ isMobile }) {
         <Experience
           from="2024"
           to="present"
-          title="Senior Java Full Stack Developer"
+          title="Senior Software Developer"
           body="Worked on a financial operations platform where accuracy and traceability were critical. Focused on handling historical corrections, reconciliation issues, and production stability. This role strengthened my ownership mindset — building systems that business teams rely on every day."
           skills={[
             "Java",
@@ -25,7 +25,7 @@ function ExperienceSection({ isMobile }) {
             "Oracle",
             "Kafka",
           ]}
-          company={"Accellor"}
+          company={"GEICO"}
         />
       </motion.div>
 
@@ -38,8 +38,8 @@ function ExperienceSection({ isMobile }) {
         <Experience
           from="2022"
           to="2023"
-          title="Java Full Stack Developer"
-          body="Built backend services and dashboards to manage large-scale field deployment operations across regions. Worked heavily with real-time status tracking and event processing, which deepened my experience with distributed workflows and operational visibility."
+          title="Software Developer"
+          body="Contributed to a healthcare services platform where reliability and data integrity were critical. Worked on resolving eligibility discrepancies, supporting claims adjustments, and maintaining production performance. This experience reinforced a strong sense of ownership — delivering stable solutions that operations and care teams rely on daily."
           skills={[
             "Java",
             "SringBoot",
@@ -51,7 +51,7 @@ function ExperienceSection({ isMobile }) {
             "Jenkins",
             "RBAC control",
           ]}
-          company={"ServicePoint"}
+          company={"Evernorth Health Services"}
         />
       </motion.div>
 
@@ -64,7 +64,7 @@ function ExperienceSection({ isMobile }) {
         <Experience
           from="2020"
           to="2022"
-          title="Senior Application Engineer"
+          title="Software Developer"
           body="Worked on a high-volume retail order system handling peak traffic and inventory consistency. Learned to design for performance, caching, and asynchronous processing to keep operations stable during heavy business demand."
           skills={[
             "Java",
@@ -89,8 +89,8 @@ function ExperienceSection({ isMobile }) {
         <Experience
           from="2018"
           to="2020"
-          title="Associate Java Developer"
-          body="Started my career building healthcare integration services and secure data workflows. This experience built my foundation in API design, data handling, and writing reliable backend logic for real-world systems."
+          title="Associate Software Developer"
+          body="Started my career working on financial systems, building services for transaction processing and secure data flows. This experience strengthened my foundation in API design, handling sensitive financial data, and developing reliable backend logic for business-critical applications."
           skills={[
             "Java",
             "SpringBoot",
