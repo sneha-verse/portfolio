@@ -132,7 +132,7 @@ const LeftPanel = React.memo(({ visibility, refsMap, mainContent }) => {
           </Box>
           <Box mr={3}>
             <CustomIconButton
-              href="https://www.linkedin.com/in/snehaa02/"
+              href="https://medium.com/@snehaachowdary2"
               icon={
                 <SvgIcon
                   component={mediumImage}
