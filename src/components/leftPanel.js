@@ -146,7 +146,7 @@ const LeftPanel = React.memo(({ visibility, refsMap, mainContent }) => {
           </Box>
           <Box mr={3}>
             <CustomIconButton
-              href="mailto:sneha.annamareddy@gmail.com"
+              href="snehaachowdary2@gmail.com"
               icon={<EmailIcon sx={{ color: "white" }} fontSize="large" />}
               text="Gmail"
             />
